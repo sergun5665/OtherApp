@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сертификаты</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">Быстрое меню</font></font></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="../news/" target="_blank"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Новости </font></font></a>
+        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Погода </font></font></a>
+        <a class="p-2 text-dark" href="certificates/"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Сертификаты </font></font></a>
+        <a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">???????</font></font></a>
+    </nav>
+    <a class="btn btn-outline-primary" href="../admin/"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">Администратор</font></font></a>
+</div>
+
+
+<style>
+    body {
+    background-image: url({% static 'weather/img/dev1.jpg' %});
+    background-repeat:no-repeat;
+    background-size:120%;
+    }
+    .box{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .cert {
+    flex: 1 0 21%; /* explanation below */
+    margin: 11px;
+    height: 260px;
+    background-color: blue;
+          }
+
+
+
+
+</style>
+<div class="box">
+    <div>
+        <a href="https://geekbrains.ru/go/_0-mYk" target="_blank">
+            <img class="cert" src="{% static 'weather/img/oop.png' %}" alt="oop"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/EsC8GT" target="_blank">
+            <img class="cert" src="{% static 'weather/img/git.png' %}" alt="git"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/bacFj6" target="_blank">
+            <img class="cert" src="{% static 'weather/img/sql_base.png' %}" alt="sql_base"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/DBV2eD" target="_blank">
+            <img class="cert" src="{% static 'weather/img/html_css.png' %}" alt="html_css"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/~YyeRe" target="_blank">
+            <img class="cert" src="{% static 'weather/img/python_base.png' %}" alt="python_base"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/cQo8bb" target="_blank">
+            <img class="cert" src="{% static 'weather/img/python_advanced_level.png' %}"
+                 alt="python_advanced_level"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/4jkXT-" target="_blank">
+            <img class="cert" src="{% static 'weather/img/django_web.png' %}" alt="django_web"></a>
+    </div>
+    <div>
+        <a href="https://geekbrains.ru/go/4-Q8Nr" target="_blank">
+            <img class="cert" src="{% static 'weather/img/intern.png' %}" alt="intern"></a>
+    </div>
+</div>
+</body>
+</html>

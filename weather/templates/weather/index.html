@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<style>
+   body {
+    background-image: url({% static 'weather/img/pic.jpg' %});
+    background-repeat:no-repeat;
+    background-size:100%;
+   }
+  .H {
+  color: black;
+  box-sizing: border-box;
+  background: #d1ecf1; /* Цвет фона */
+  opacity: .7;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  }
+   .H1 {
+  color: black;
+  box-sizing: border-box;
+  background: #d1ecf1; /* Цвет фона */
+  opacity: .7;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  }
+  .alert-info{
+  opacity: .7;
+  color: #0f0f0f;
+  }
+
+</style>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">Быстрое меню</font></font></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="news/" target="_blank"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Новости </font></font></a>
+        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Погода </font></font></a>
+        <a class="p-2 text-dark" href="certificates/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Сертификаты </font></font></a>
+        <a class="p-2 text-dark" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">???????</font></font></a>
+    </nav>
+    <a class="btn btn-outline-primary" href="admin/"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">Администратор</font></font></a>
+</div>
+
+<div class="pogoda">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-5">
+                <h1 class="H">Погода</h1>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label class="H1" for="city">Введите город</label>
+                    {{ form.name }}
+
+                    <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger">
+                </form>
+            </div>
+            <div class="col-5 offset-2">
+                <h1 class="H">Результат</h1>
+                {% for info in all_info %}
+                <div class="alert alert-info">
+                    <div class=" row">
+                        <div class="col-9">
+                            <b>Город:</b> {{ info.city }}<br>
+                            <b>Тепература:</b> {{ info.temp }}<sup>o</sup><br>
+                        </div>
+                        <div class="col-2 offset-1">
+                            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="foto pogoda"
+                                 class="img-thumbail">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
