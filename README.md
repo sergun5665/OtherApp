@@ -1,0 +1,2 @@
+# OtherApp
+Project for practice
